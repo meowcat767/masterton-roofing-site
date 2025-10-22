@@ -9,9 +9,6 @@ body {
   align-items: center;
   padding: 15px 30px;
   background-color: #000000;
-  position: fixed;
-  top: 0;
-  z-index: 1030; /* to prevent the navbar getting covered up by other content */
 }
 
 .logo {
@@ -24,7 +21,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 30px;
+  gap: 10px;
 }
 
 .nav-links a {
@@ -68,7 +65,6 @@ body {
   z-index: -1; /* Puts it behind other content */
 }
 
-.navbar,
 .text-center,
 .para {
   position: relative;
@@ -89,7 +85,6 @@ body {
   width: 180px;
   margin: 10px auto;
 }
-
 .hero {
   background-image: url("img/work/job1.jpg");
   background-size: cover;
@@ -150,3 +145,7 @@ body {
   outline: 1px dashed black;
   outline-offset: -5px;
 }
+
+
+
+
