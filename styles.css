@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  z-index: 1030; /* to prevent the navbar getting covered up by other content */
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-family: "Open Sans";
+  font-size: 16px;
+}
+
+.grid-gallery {
+  --size: 100px;
+  display: grid;
+  grid-template-columns: repeat(6, var(--size));
+  grid-auto-rows: var(--size);
+  gap: 5px;
+  place-items: start center;
+  margin-bottom: var(--size);
+}
+
+.nav-links a:hover {
+  color: #0877d1;
+}
+
+.text-center {
+  font-family: "Open Sans";
+  text-align: center;
+}
+
+.para {
+  font-family: "Open Sans";
+}
+
+.images {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: -1; /* Puts it behind other content */
+}
+
+.navbar,
+.text-center,
+.para {
+  position: relative;
+  z-index: 1;
+}
+
+.images img {
+  width: 500px;
+  height: 500px;
+}
+
+.header {
+  border-radius: 15px;
+  margin: 10px;
+  border-radius: 15px;
+  border: 2px solid #333;
+  background-color: #ffff;
+  width: 180px;
+  margin: 10px auto;
+}
+
+.hero {
+  background-image: url("img/work/job1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.text-left {
+  text-align: left;
+  font-family: "Open Sans";
+  margin-left: 40px;
+}
+
+.align-right {
+  float: right;
+  margin-right: 40px; /* Space from the right edge */
+  width: 800px;
+  height: 250px;
+}
+
+.align-center {
+  display: block;
+  width: 800px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.grid-gallery img {
+  width: calc(var(--size) * 2);
+  height: calc(var(--size) * 2);
+  object-fit: cover;
+  grid-column: auto / span 2;
+  border-radius: 5px;
+  clip-path: path(
+    "M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z"
+  );
+  transition: clip-path 0.25s, filter 0.75s;
+}
+
+.grid-gallery img:nth-child(5n - 1) {
+  grid-column: 2 / span 2;
+}
+
+.grid-gallery:has(img:hover) img:not(:hover) {
+  filter: brightness(0.5) contrast(0.5);
+}
+
+.grid-gallery img:hover {
+  clip-path: path(
+    "M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z"
+  );
+  transition: clip-path 0.25s, filter 0.25s;
+  z-index: 1;
+}
+
+.grid-gallery a:focus {
+  outline: 1px dashed black;
+  outline-offset: -5px;
+}
