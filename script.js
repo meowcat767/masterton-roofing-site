@@ -44,4 +44,22 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.style.display = 'none';
     }
   });
+
+  // Scroll reveal for elements with .reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealElements.length) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { root: null, rootMargin: '0px', threshold: 0.12 });
+
+    revealElements.forEach(el => obs.observe(el));
+  } else {
+    // fallback: activate all
+    revealElements.forEach(el => el.classList.add('active'));
+  }
 });

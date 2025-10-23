@@ -31,41 +31,58 @@
           <li><a href="#gallery">Gallery</a></li>
         </ul>
       </nav>
-      <div class="hero">
-        <img class="align-center" src="img/logos/logo-head.png" />
-      </div>
-      <div class="blurb">
-        <h2 class="text-left" id="about">About Us</h2>
-        <p class="text-left para">
-          Welcome to Masterton Roofing Limited! With years of experience in the
-          industry, our team is dedicated to delivering top-quality roofing
-          solutions that stand the test of time. We take pride in our
-          craftsmanship, attention to detail, and commitment to customer
-          satisfaction. From the initial consultation to the final inspection, we
-          ensure every project is completed efficiently, safely, and to the
-          maximum standards. Trust us to provide you with a roof that not only
-          looks great but also offers lasting protection for your home or
-          business.
-        </p>
-        <video class="align-right" autoplay muted loop playsinline>
-          <source src="img/work/drone.mp4" type="video/mp4" />
-        </video>
+      <!-- page layout: centered content -->
+      <div class="page-wrap">
+        <section class="content reveal">
+          <div class="top-split">
+            <div class="top-text">
+              <h2 class="text-left" id="about">About Us</h2>
+              <p class="text-left para">
+                Welcome to Masterton Roofing Limited! With years of experience in the
+                industry, our team is dedicated to delivering top-quality roofing
+                solutions that stand the test of time. We take pride in our
+                craftsmanship, attention to detail, and commitment to customer
+                satisfaction. From the initial consultation to the final inspection, we
+                ensure every project is completed efficiently, safely, and to the
+                maximum standards. Trust us to provide you with a roof that not only
+                looks great but also offers lasting protection for your home or
+                business.
+              </p>
+            </div>
+
+            <div class="top-media">
+              <video autoplay muted loop playsinline>
+                <source src="img/work/drone.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="bottom-split">
+            <div class="bottom-box">
+              <!-- placeholder box on left -->
+            </div>
+            <div class="bottom-text">
+              <h3>Services summary</h3>
+              <p>
+                We specialize in advanced single-ply roofing solutions, including the
+                installation of PVC membrane systems, which come with a minimum 20-year
+                warranty. This high-performance material offers exceptional durability,
+                weather resistance, and energy efficiency for your property.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
       <br />
-      <div class="services" id="services">
-        <h2 class="text-left">Services</h2>
+  <div class="services reveal" id="services">
+        <h2 class="text-left">More Services</h2>
         <p class="text-left">
-          We specialize in advanced single-ply roofing solutions, including the
-          installation of PVC membrane systems, which come with a minimum 20-year
-          warranty. This high-performance material offers exceptional durability,
-          weather resistance, and energy efficiency for your property. Our team
-          expertly installs complete build-ups from the deck upwards, ensuring a
-          long-lasting roofing system designed by us, tailored to your specific
-          needs. Whether it's a new build or a refurbishment, you can rely on us
-          for professional single ply roofing services that deliver peace of mind.
+          Our experienced installers provide site surveys, bespoke designs and ongoing maintenance packages.
         </p>
       </div>
-      <div class="gallery" id="gallery">
+  <div class="gallery reveal" id="gallery">
         <h2 class="text-left">Gallery</h2>
         <div class="carousel">
           <div class="carousel-container">
@@ -95,9 +112,9 @@
           <button class="carousel-next">></button>
         </div>
       </div>
-      <div class="contact" id="contact">
+  <div class="contact reveal" id="contact">
         <h2 class="text-left">Contact</h2>
-        <p class="text-left"><b>Email:</b><a href="mailto:lee@mastertonroofing.com">lee@mastertonroofing.com</p>
+        <p class="text-left"><b>Email:</b> <a href="mailto:lee@mastertonroofing.com">lee@mastertonroofing.com</a></p>
       </div>
       <!-- Modal for enlarged image -->
       <div id="imageModal" class="modal">
@@ -105,7 +122,7 @@
         <img class="modal-content" id="modalImage" alt="Enlarged image">
       </div>
     </main>
-    <footer>
+  <footer class="reveal">
       <nav class="footer-navbar">
         <img
           src="img/logos/logo-head.png"

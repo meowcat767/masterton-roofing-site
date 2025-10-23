@@ -34,9 +34,38 @@ footer {
   background-color: #000000;
 }
 
+
+/* Sticky header */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 .logo {
   height: 50px;
   width: auto;
+}
+
+/* Page layout: left and right yellow sidebars with centered content area */
+.page-wrap {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  gap: 20px;
+  align-items: start;
+}
+
+.sidebar {
+  background: #ffd24d; /* yellow from wireframe */
+  min-height: 100vh;
+}
+
+.left-sidebar {
+  /* decorative sidebar - no extra rules needed */
+  padding: 0;
+}
+
+.right-sidebar {
+  padding: 0;
 }
 
 .nav-links {
@@ -45,25 +74,11 @@ footer {
   margin: 0;
   padding: 0;
   gap: 10px;
+.page-wrap {
+  /* simplified: single column center content */
+  display: block;
+  margin: 0 auto;
 }
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-family: "Open Sans";
-  font-size: 16px;
-}
-
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 20px auto;
-  overflow: hidden;
-}
-
-.carousel-container {
-  display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -114,6 +129,33 @@ footer {
 .nav-links a:hover {
   color: #0877d1;
 }
+
+/* subtle interactive transitions */
+.nav-links a,
+.carousel-prev,
+.carousel-next,
+.modal-close {
+  transition: transform 160ms ease, color 160ms ease, background-color 160ms ease;
+}
+
+.nav-links a:active { transform: translateY(1px); }
+
+/* Reveal animation for sections */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px) scale(0.995);
+  transition: opacity 420ms cubic-bezier(.2,.9,.2,1), transform 420ms cubic-bezier(.2,.9,.2,1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* small hover pop for carousel controls */
+.carousel-prev:hover,
+.carousel-next:hover { transform: scale(1.06); }
 
 .text-center {
   font-family: "Open Sans";
@@ -181,6 +223,93 @@ footer {
   width: 800px;
   height: 300px;
   margin: 0 auto;
+}
+
+/* Main content area inside center column */
+.content {
+  grid-column: 2 / 3;
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.top-split {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 30px;
+  align-items: start;
+}
+
+.top-text {
+  color: #222;
+  font-family: "Open Sans";
+}
+
+.top-media video {
+  width: 100%;
+.content {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+  height: 6px;
+  background: #1e90ff; /* blue divider */
+  margin: 28px 0;
+  border-radius: 4px;
+}
+
+.bottom-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.bottom-box {
+  min-height: 180px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.bottom-text {
+  color: #222;
+  font-family: "Open Sans";
+}
+
+/* Small screens: stack layout */
+@media (max-width: 900px) {
+  .page-wrap {
+    grid-template-columns: 12px 1fr 12px;
+  }
+  .top-split {
+    grid-template-columns: 1fr;
+  }
+  .top-media video {
+    max-height: 220px;
+  }
+  .bottom-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Make other main sections match the centered content */
+.services,
+.gallery,
+.contact {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 30px 20px;
+  box-sizing: border-box;
+}
+
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .modal {
