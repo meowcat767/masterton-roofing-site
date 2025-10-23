@@ -26,14 +26,15 @@ footer {
   background-color: #000000;
 }
 
-.navbar {
+.navbar,
+.footer-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background-color: #000000;
+  background-color: #000;
+  font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
-
 
 /* Sticky header */
 .navbar {
@@ -67,6 +68,7 @@ footer {
   padding: 6px 8px;
   border-radius: 4px;
   display: inline-block;
+  font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
 .nav-links a:hover {
