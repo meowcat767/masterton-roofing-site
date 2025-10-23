@@ -78,6 +78,14 @@ footer {
   width: auto;
 }
 
+/* Footer logo alignment fix */
+.footer-navbar .logo {
+  height: 44px;
+  margin: 0;
+  align-self: center;
+  display: block;
+}
+
 /* make logo left and nav links right-aligned */
 .navbar { gap: 12px; }
 .navbar .logo { margin-right: 12px; }
