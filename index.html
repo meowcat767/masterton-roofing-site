@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Masterton Roofing</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -66,20 +67,42 @@
       </div>
       <div class="gallery" id="gallery">
         <h2 class="text-left">Gallery</h2>
-        <article class="grid-gallery">
-          <img src="img/work/job1.jpg" alt="Job at Drayton" />
-          <img src="img/pup.jpg" alt="The PUP Welder" />
-          <img src="img/hero2.png" alt="A job that looks super clean" />
-          <img src="img/hero3.png" alt="" />
-          <img src="img/hero1 (1).png" alt="Horsham job" />
-          <img src="img/work/jeb.jpeg" alt="" />
-          <img src="img/work/jebediah.jpeg" alt="" />
-        </article>
+        <div class="carousel">
+          <div class="carousel-container">
+            <div class="carousel-slide">
+              <img src="img/work/job1.jpg" alt="Job at Drayton" />
+            </div>
+            <div class="carousel-slide">
+              <img src="img/pup.jpg" alt="The PUP Welder" />
+            </div>
+            <div class="carousel-slide">
+              <img src="img/hero2.png" alt="A job that looks super clean" />
+            </div>
+            <div class="carousel-slide">
+              <img src="img/hero3.png" alt="" />
+            </div>
+            <div class="carousel-slide">
+              <img src="img/hero1 (1).png" alt="Horsham job" />
+            </div>
+            <div class="carousel-slide">
+              <img src="img/work/jeb.jpeg" alt="" />
+            </div>
+            <div class="carousel-slide">
+              <img src="img/work/jebediah.jpeg" alt="" />
+            </div>
+          </div>
+          <button class="carousel-prev"><</button>
+          <button class="carousel-next">></button>
+        </div>
       </div>
-      <br />
       <div class="contact" id="contact">
         <h2 class="text-left">Contact</h2>
         <p class="text-left"><b>Email:</b><a href="mailto:lee@mastertonroofing.com">lee@mastertonroofing.com</p>
+      </div>
+      <!-- Modal for enlarged image -->
+      <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Enlarged image">
       </div>
     </main>
     <footer>
