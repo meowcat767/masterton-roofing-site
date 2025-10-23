@@ -46,26 +46,9 @@ footer {
   width: auto;
 }
 
-/* Page layout: left and right yellow sidebars with centered content area */
+/* Page center container */
 .page-wrap {
-  display: grid;
-  grid-template-columns: 24px 1fr 24px;
-  gap: 20px;
-  align-items: start;
-}
-
-.sidebar {
-  background: #ffd24d; /* yellow from wireframe */
-  min-height: 100vh;
-}
-
-.left-sidebar {
-  /* decorative sidebar - no extra rules needed */
-  padding: 0;
-}
-
-.right-sidebar {
-  padding: 0;
+  width: 100%;
 }
 
 .nav-links {
@@ -73,13 +56,48 @@ footer {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 10px;
+  gap: 14px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.nav-links a:hover {
+  color: #0877d1;
+  background: rgba(255,255,255,0.04);
+  transform: translateY(-2px);
+}
+
+/* Ensure header and footer nav links are explicitly white and accessible */
+.navbar .nav-links a,
+.footer-navbar .nav-links a {
+  color: #fff !important;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a:visited { color: #fff; }
+
+.nav-links a:focus,
+.nav-links a:focus-visible {
+  outline: 3px solid rgba(8,119,209,0.18);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
 .page-wrap {
   /* simplified: single column center content */
   display: block;
   margin: 0 auto;
-}
-  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-slide {
@@ -248,12 +266,19 @@ footer {
 
 .top-media video {
   width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
 .content {
   padding: 30px 20px;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
 }
+
+.divider {
   height: 6px;
   background: #1e90ff; /* blue divider */
   margin: 28px 0;
