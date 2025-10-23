@@ -4,6 +4,31 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden; /* prevent any accidental horizontal overflow creating a white strip */
+}
+
+html, body { height: 100%; }
+
+/* Scrollbar styling for Blink-based browsers (Chrome/Opera) */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000; /* match the site's dark header/footer */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  border: 3px solid #000; /* padding around the thumb */
+}
+
+/* Firefox scrollbar colors */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.12) #000;
 }
 
 main {
@@ -35,6 +60,12 @@ footer {
   background-color: #000;
   font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
+/* cross-browser rendering hints for Chromium-based browsers like Opera */
+.navbar {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  min-height: 64px; /* ensures vertical centering space */
+}
 
 /* Sticky header */
 .navbar {
@@ -51,7 +82,24 @@ footer {
 .navbar { gap: 12px; }
 .navbar .logo { margin-right: 12px; }
 .nav-links { margin-left: auto; display: flex; align-items: center; }
-.nav-links li { display: inline-block; }
+.nav-links li { display: inline-flex; align-items: center; }
+.nav-links a { line-height: 1.2; }
+
+/* hero logo inside the banner */
+.hero-logo {
+  display: block;
+  width: 120px;
+  height: auto;
+  margin: 0 auto 12px auto;
+}
+
+/* ensure header logo and nav are vertically centered in Opera/Chromium */
+.navbar, .footer-navbar { align-items: center; }
+.navbar .logo { display: block; }
+.nav-links a { display: inline-flex; align-items: center; }
+
+/* avoid subpixel jitter on hover/transform in some Blink builds */
+.navbar, .nav-links a, .carousel-prev, .carousel-next { -webkit-transform: translateZ(0); transform: translateZ(0); }
 
 /* Page center container */
 .page-wrap {
@@ -192,6 +240,12 @@ footer {
   transform: translateY(0) scale(1);
 }
 
+/* Fallback: if JS is disabled, .reveal should be visible */
+html.no-js .reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* small hover pop for carousel controls */
 .carousel-prev:hover,
 .carousel-next:hover { transform: scale(1.06); }
@@ -242,9 +296,21 @@ footer {
   background-position: center;
   padding: 100px 20px;
   position: relative;
+  width: 100vw; /* full viewport width */
+  margin-left: calc(50% - 50vw); /* center the full-bleed area */
+  box-sizing: border-box;
 }
 
-.hero .content { text-align: center; color: #fff; }
+.hero .content {
+  text-align: center;
+  color: #fff;
+}
+
+/* If hero has a light background, use dark text */
+.hero[style*="background-color"] .content,
+.hero[style*="background:#"] .content {
+  color: #222;
+}
 .hero h1 { margin: 0 0 8px 0; font-size: 36px; }
 .hero p { margin: 0; font-size: 18px; }
 

@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Remove no-js class from <html> if JS is running
+  document.documentElement.classList.remove('no-js');
   const carouselContainer = document.querySelector('.carousel-container');
   const slides = document.querySelectorAll('.carousel-slide');
   const prevButton = document.querySelector('.carousel-prev');
@@ -47,19 +49,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Scroll reveal for elements with .reveal
   const revealElements = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && revealElements.length) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { root: null, rootMargin: '0px', threshold: 0.12 });
+  // Always add .active as a fallback so text never disappears
+  revealElements.forEach(el => el.classList.add('active'));
 
-    revealElements.forEach(el => obs.observe(el));
-  } else {
-    // fallback: activate all
-    revealElements.forEach(el => el.classList.add('active'));
-  }
+  // Optionally, keep IntersectionObserver for animation if you want staggered effect
+  // (but .active is always present, so text never animates out)
 });
