@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
   const modalClose = document.querySelector('.modal-close');
+  console.log("Loaded DOM Carousel and Image Modals.")
 
   let currentIndex = 0;
 
