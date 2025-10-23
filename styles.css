@@ -47,6 +47,12 @@ footer {
   width: auto;
 }
 
+/* make logo left and nav links right-aligned */
+.navbar { gap: 12px; }
+.navbar .logo { margin-right: 12px; }
+.nav-links { margin-left: auto; display: flex; align-items: center; }
+.nav-links li { display: inline-block; }
+
 /* Page center container */
 .page-wrap {
   width: 100%;
@@ -237,6 +243,10 @@ footer {
   padding: 100px 20px;
   position: relative;
 }
+
+.hero .content { text-align: center; color: #fff; }
+.hero h1 { margin: 0 0 8px 0; font-size: 36px; }
+.hero p { margin: 0; font-size: 18px; }
 
 .text-left {
   text-align: left;
