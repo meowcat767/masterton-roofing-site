@@ -7,7 +7,10 @@ body {
   overflow-x: hidden; /* prevent any accidental horizontal overflow creating a white strip */
 }
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 
 /* Scrollbar styling for Blink-based browsers (Chrome/Opera) */
 ::-webkit-scrollbar {
@@ -20,7 +23,7 @@ html, body { height: 100%; }
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255,255,255,0.12);
+  background-color: rgba(255, 255, 255, 0.12);
   border-radius: 10px;
   border: 3px solid #000; /* padding around the thumb */
 }
@@ -28,7 +31,7 @@ html, body { height: 100%; }
 /* Firefox scrollbar colors */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255,255,255,0.12) #000;
+  scrollbar-color: rgba(255, 255, 255, 0.12) #000;
 }
 
 main {
@@ -58,7 +61,8 @@ footer {
   align-items: center;
   padding: 15px 30px;
   background-color: #000;
-  font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
 }
 /* cross-browser rendering hints for Chromium-based browsers like Opera */
 .navbar {
@@ -87,11 +91,24 @@ footer {
 }
 
 /* make logo left and nav links right-aligned */
-.navbar { gap: 12px; }
-.navbar .logo { margin-right: 12px; }
-.nav-links { margin-left: auto; display: flex; align-items: center; }
-.nav-links li { display: inline-flex; align-items: center; }
-.nav-links a { line-height: 1.2; }
+.navbar {
+  gap: 12px;
+}
+.navbar .logo {
+  margin-right: 12px;
+}
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.nav-links li {
+  display: inline-flex;
+  align-items: center;
+}
+.nav-links a {
+  line-height: 1.2;
+}
 
 /* hero logo inside the banner */
 .hero-logo {
@@ -102,12 +119,26 @@ footer {
 }
 
 /* ensure header logo and nav are vertically centered in Opera/Chromium */
-.navbar, .footer-navbar { align-items: center; }
-.navbar .logo { display: block; }
-.nav-links a { display: inline-flex; align-items: center; }
+.navbar,
+.footer-navbar {
+  align-items: center;
+}
+.navbar .logo {
+  display: block;
+}
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+}
 
 /* avoid subpixel jitter on hover/transform in some Blink builds */
-.navbar, .nav-links a, .carousel-prev, .carousel-next { -webkit-transform: translateZ(0); transform: translateZ(0); }
+.navbar,
+.nav-links a,
+.carousel-prev,
+.carousel-next {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
 
 /* Page center container */
 .page-wrap {
@@ -130,12 +161,13 @@ footer {
   padding: 6px 8px;
   border-radius: 4px;
   display: inline-block;
-  font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
 }
 
 .nav-links a:hover {
   color: #0877d1;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   transform: translateY(-2px);
 }
 
@@ -149,11 +181,13 @@ footer {
   margin: 0;
 }
 
-.nav-links a:visited { color: #fff; }
+.nav-links a:visited {
+  color: #fff;
+}
 
 .nav-links a:focus,
 .nav-links a:focus-visible {
-  outline: 3px solid rgba(8,119,209,0.18);
+  outline: 3px solid rgba(8, 119, 209, 0.18);
   outline-offset: 2px;
   border-radius: 6px;
 }
@@ -230,16 +264,20 @@ footer {
 .carousel-prev,
 .carousel-next,
 .modal-close {
-  transition: transform 160ms ease, color 160ms ease, background-color 160ms ease;
+  transition: transform 160ms ease, color 160ms ease,
+    background-color 160ms ease;
 }
 
-.nav-links a:active { transform: translateY(1px); }
+.nav-links a:active {
+  transform: translateY(1px);
+}
 
 /* Reveal animation for sections */
 .reveal {
   opacity: 0;
   transform: translateY(12px) scale(0.995);
-  transition: opacity 420ms cubic-bezier(.2,.9,.2,1), transform 420ms cubic-bezier(.2,.9,.2,1);
+  transition: opacity 420ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    transform 420ms cubic-bezier(0.2, 0.9, 0.2, 1);
   will-change: transform, opacity;
 }
 
@@ -256,7 +294,9 @@ html.no-js .reveal {
 
 /* small hover pop for carousel controls */
 .carousel-prev:hover,
-.carousel-next:hover { transform: scale(1.06); }
+.carousel-next:hover {
+  transform: scale(1.06);
+}
 
 .text-center {
   font-family: "Open Sans";
@@ -319,8 +359,14 @@ html.no-js .reveal {
 .hero[style*="background:#"] .content {
   color: #222;
 }
-.hero h1 { margin: 0 0 8px 0; font-size: 36px; }
-.hero p { margin: 0; font-size: 18px; }
+.hero h1 {
+  margin: 0 0 8px 0;
+  font-size: 36px;
+}
+.hero p {
+  margin: 0;
+  font-size: 18px;
+}
 
 .text-left {
   text-align: left;
@@ -469,8 +515,8 @@ footer {
   cursor: pointer;
 }
 
-
-
-
-
-
+.bottom-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Covers the entire box, may crop image */
+}
