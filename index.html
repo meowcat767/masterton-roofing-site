@@ -101,8 +101,37 @@
       <div class="contact reveal" id="contact">
         <h2 class="text-left">Contact</h2>
         <p class="text-left">
-          <b>Email:</b>
-          <a href="mailto:lee@mastertonroofing.com">lee@mastertonroofing.com</a>
+          <form
+  action="https://formspree.io/f/{FORM_ID}"
+  class="fs-form"
+  target="_top"
+  method="POST"
+>
+  <div class="fs-field">
+    <label class="fs-label" for="name">Name</label>
+    <input class="fs-input" id="name" name="name" required />
+  </div>
+  <div class="fs-field">
+    <label class="fs-label" for="email">Email Address</label>
+    <input class="fs-input" id="email" name="email" required />
+  </div>
+  <div class="fs-field">
+    <label class="fs-label" for="number">Phone Number</label>
+    <input class="fs-input" id="number" name="number" />
+  </div>
+  <div class="fs-field">
+    <label class="fs-label" for="message">Inquiry Message</label>
+    <textarea
+      class="fs-textarea"
+      id="message"
+      name="message"
+      required
+    ></textarea>
+  </div>
+  <div class="fs-button-group">
+    <button class="fs-button" type="submit">Submit</button>
+  </div>
+</form>
         </p>
       </div>
       <!-- Modal for enlarged image -->
