@@ -488,7 +488,6 @@ footer {
 /* hero logo inside the banner */
 .hero-logo {
   display: block;
-  width: 120px;
   height: auto;
   margin: 0 auto 12px auto;
 }
